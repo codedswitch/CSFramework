@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CSFramework'
-  s.version          = '0.0.3'
-  s.summary          = 'Travis Update'
+  s.version          = '0.0.4'
+  s.summary          = 'Test Travis'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

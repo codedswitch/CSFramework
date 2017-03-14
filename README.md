@@ -22,7 +22,7 @@ pod "CSFramework"
 
 ## Author
 
-alvincrisuy, alvincrisuy@gmail.com
+alvincrisuy, alvincris.uy@codedswitch.com
 
 ## License
 
