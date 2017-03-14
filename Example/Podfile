@@ -2,6 +2,8 @@ use_frameworks!
 
 target 'CSFramework_Example' do
   pod 'CSFramework', :path => '../'
+  pod 'AFNetworking'
+  pod 'Socket.IO-Client-Swift'
 
   target 'CSFramework_Tests' do
     inherit! :search_paths

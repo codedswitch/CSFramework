@@ -1,6 +1,0 @@
-framework module CSFramework {
-  umbrella header "CSFramework-umbrella.h"
-
-  export *
-  module * { export * }
-}

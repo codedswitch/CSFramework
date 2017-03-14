@@ -1,6 +1,6 @@
 # CSFramework
 
-[![CI Status](http://img.shields.io/travis/alvincrisuy/CSFramework.svg?style=flat)](https://travis-ci.org/alvincrisuy/CSFramework)
+[![CI Status](http://img.shields.io/travis/codedswitch/CSFramework.svg?style=flat)](https://travis-ci.org/codedswitch/CSFramework)
 [![Version](https://img.shields.io/cocoapods/v/CSFramework.svg?style=flat)](http://cocoapods.org/pods/CSFramework)
 [![License](https://img.shields.io/cocoapods/l/CSFramework.svg?style=flat)](http://cocoapods.org/pods/CSFramework)
 [![Platform](https://img.shields.io/cocoapods/p/CSFramework.svg?style=flat)](http://cocoapods.org/pods/CSFramework)
