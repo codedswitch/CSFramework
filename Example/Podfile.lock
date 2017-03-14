@@ -1,0 +1,19 @@
+PODS:
+  - CSFramework (0.1.0)
+  - Kiwi (2.4.0)
+
+DEPENDENCIES:
+  - CSFramework (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  CSFramework:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CSFramework: d1d68a69c12a165ef3db8770010dee1dd7cce352
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+
+PODFILE CHECKSUM: 06cae64e17ec4c4f431e74e6f0c6e40b62bf6ae4
+
+COCOAPODS: 1.2.0

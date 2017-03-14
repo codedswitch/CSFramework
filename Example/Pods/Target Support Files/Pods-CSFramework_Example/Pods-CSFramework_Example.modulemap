@@ -1,0 +1,6 @@
+framework module Pods_CSFramework_Example {
+  umbrella header "Pods-CSFramework_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

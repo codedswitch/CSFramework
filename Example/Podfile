@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CSFramework_Example' do
+  pod 'CSFramework', :path => '../'
+
+  target 'CSFramework_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  end
+end
