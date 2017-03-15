@@ -191,11 +191,11 @@ static CSRequestManager* _sharedManager = nil;
                                                                           if (error) {
                                                                               NSLog(@"Error: %@", [error description]);
                                                                               
-                                                                              failedBlock(uploadTask, error);
+                                                                              failedBlock(nil, error);
                                                                           } else {
                                                                               NSLog(@"Response Object: %@", responseObject);
                                                                               
-                                                                              successBlock(uploadTask, responseObject);
+                                                                              successBlock(nil, responseObject);
                                                                           }
                                                                       }];
     [uploadTask resume];

@@ -42,7 +42,8 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
      parameters:(id)parameters
        progress:(RequestProgressBlock)progressBlock
         success:(RequestSuccessBlock)successBlock
-         failed:(RequestFailedBlock)failedBlock;
+         failed:(RequestFailedBlock)failedBlock
+  authenticated:(BOOL)authenticated;
 
 // Upload Files (Array)
 - (void)request:(NSString *)URLString
