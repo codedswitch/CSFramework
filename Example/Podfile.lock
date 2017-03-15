@@ -1,19 +1,41 @@
 PODS:
-  - CSFramework (0.1.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CSFramework (0.0.5):
+    - AFNetworking
+    - Socket.IO-Client-Swift
   - Kiwi (2.4.0)
+  - Socket.IO-Client-Swift (8.3.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - CSFramework (from `../`)
   - Kiwi
+  - Socket.IO-Client-Swift
 
 EXTERNAL SOURCES:
   CSFramework:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CSFramework: d1d68a69c12a165ef3db8770010dee1dd7cce352
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CSFramework: 490433d03edaeecfa71b09f80c9bd42f6efe24b0
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  Socket.IO-Client-Swift: 7ad3aded3c0f74d99555e950ac3aa82ca3eefbaf
 
-PODFILE CHECKSUM: 06cae64e17ec4c4f431e74e6f0c6e40b62bf6ae4
+PODFILE CHECKSUM: a673b276059c319e9697fb3730fb398689e2aa40
 
 COCOAPODS: 1.2.0
