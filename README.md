@@ -1,6 +1,6 @@
 # CSFramework
 
-[![Apps Using](https://img.shields.io/cocoapods/at/CSFramework.svg?label=Apps%20Using%20ASDK&colorB=28B9FE)](http://cocoapods.org/pods/CSFramework)
+[![Apps Using](https://img.shields.io/cocoapods/at/CSFramework.svg?label=Apps%20Using%20CFramework&colorB=28B9FE)](http://cocoapods.org/pods/CSFramework)
 [![Downloads](https://img.shields.io/cocoapods/dt/CSFramework.svg?label=Total%20Downloads&colorB=28B9FE)](http://cocoapods.org/pods/CSFramework)
 [![CI Status](http://img.shields.io/travis/codedswitch/CSFramework.svg?style=flat)](https://travis-ci.org/codedswitch/CSFramework)
 [![codecov.io](https://codecov.io/github/codedswitch/CSFramework/coverage.svg?branch=master)](https://codecov.io/github/codedswitch/CSFramework?branch=master)
@@ -24,7 +24,9 @@ it, simply add the following line to your Podfile:
 pod "CSFramework"
 ```
 
-## Author
+## Contributing
+
+## Credits
 
 alvincrisuy, alvincris.uy@codedswitch.com
 
