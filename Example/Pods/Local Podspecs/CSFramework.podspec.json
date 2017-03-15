@@ -1,7 +1,7 @@
 {
   "name": "CSFramework",
-  "version": "0.0.1",
-  "summary": "This is just a test.",
+  "version": "0.0.4",
+  "summary": "Test Travis",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/codedswitch/CSFramework",
   "license": {
@@ -13,10 +13,18 @@
   },
   "source": {
     "git": "https://github.com/codedswitch/CSFramework.git",
-    "tag": "0.0.1"
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "CSFramework/Classes/**/*"
+  "source_files": "CSFramework/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "Socket.IO-Client-Swift": [
+
+    ]
+  }
 }
