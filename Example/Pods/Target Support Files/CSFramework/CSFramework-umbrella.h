@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "CSRequestFileData.h"
 #import "CSRequestManager.h"
 
 FOUNDATION_EXPORT double CSFrameworkVersionNumber;

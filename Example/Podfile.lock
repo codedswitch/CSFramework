@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CSFramework (0.0.5):
+  - CSFramework (0.0.9):
     - AFNetworking
     - Socket.IO-Client-Swift
   - Kiwi (2.4.0)
-  - Socket.IO-Client-Swift (8.3.0)
+  - Socket.IO-Client-Swift (8.3.2)
 
 DEPENDENCIES:
   - AFNetworking
@@ -32,10 +32,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CSFramework: 490433d03edaeecfa71b09f80c9bd42f6efe24b0
+  CSFramework: 9703a7d19fcf10041713c6ed4187d3dc1e221e7e
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
-  Socket.IO-Client-Swift: 7ad3aded3c0f74d99555e950ac3aa82ca3eefbaf
+  Socket.IO-Client-Swift: 68b60e12f76b18233cc6300394fb8b6588c80200
 
-PODFILE CHECKSUM: a673b276059c319e9697fb3730fb398689e2aa40
+PODFILE CHECKSUM: cadd32128817923e8d08a4a6cd068759ead766e4
 
 COCOAPODS: 1.2.0

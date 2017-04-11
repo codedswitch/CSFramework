@@ -1,7 +1,7 @@
 {
   "name": "CSFramework",
-  "version": "0.0.5",
-  "summary": "Pre-release",
+  "version": "0.0.9",
+  "summary": "0.0.9",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/codedswitch/CSFramework",
   "license": {
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/codedswitch/CSFramework.git",
-    "tag": "0.0.5"
+    "tag": "0.0.9"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "9.0"
   },
   "source_files": "CSFramework/Classes/**/*",
   "dependencies": {
