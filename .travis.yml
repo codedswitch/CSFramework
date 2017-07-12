@@ -9,7 +9,7 @@ podfile: Example/Podfile
 before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
-- brew outdated carthrage || brew upgrade carthrage
+- brew outdated carthage || brew upgrade carthage
 - gem install cocoapods # Since Travis is not always on latest version
 - gem install xcpretty
 - gem install xcpretty-travis-formatter
