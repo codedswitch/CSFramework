@@ -24,6 +24,10 @@ it, simply add the following line to your Podfile:
 pod "CSFramework"
 ```
 
+## Guidelines
+
+https://www.appcoda.com/cocoapods-making-guide
+
 ## Contributing
 
 ## Credits

@@ -55,6 +55,9 @@ static CSRequestManager* _sharedManager = nil;
 - (void)initializeHTTPManagerAuthenticated:(BOOL)authenticated {
     
     if (self.httpManager) {
+        
+        [self checkAuthentication:authenticated];
+        
         return;
     }
     
@@ -63,13 +66,19 @@ static CSRequestManager* _sharedManager = nil;
     self.httpManager.requestSerializer = [AFHTTPRequestSerializer serializer];      // HTTP Request
     self.httpManager.responseSerializer = [AFJSONResponseSerializer serializer];    // JSON Response
     
+    [self checkAuthentication:authenticated];
+    
+    [self.httpManager.reachabilityManager startMonitoring];
+}
+
+- (void)checkAuthentication:(BOOL)authenticated {
+    
     if (authenticated) {
         NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:USERDEFAULT_TOKEN_STRING];
         [self.httpManager.requestSerializer setValue:[NSString stringWithFormat:AF_HTTPHEADERFIELD_AUTHENTICATION_VALUE, token]
                                   forHTTPHeaderField:AF_HTTPHEADERFIELD_AUTHENTICATION];
     }
     
-    [self.httpManager.reachabilityManager startMonitoring];
 }
 
 - (void)request:(NSString *)URLString
