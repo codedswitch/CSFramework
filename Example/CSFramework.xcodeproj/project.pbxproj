@@ -247,7 +247,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CS;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = alvincrisuy;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -533,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E8927D0847AB76ACA23DF2B /* Pods-CSFramework_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSFramework/CSFramework-Prefix.pch";
@@ -548,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC91CE35DADEDC4923B06244 /* Pods-CSFramework_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSFramework/CSFramework-Prefix.pch";

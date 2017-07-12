@@ -96,7 +96,16 @@ static CSRequestManager* _sharedManager = nil;
     RequestFailedBlock requestFailedBlock = ^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", [error description]);
         
-        failedBlock(task, error);
+        NSString* errorResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+        NSData *errorData = [errorResponse dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:nil];
+        
+        if (responseDictionary) {
+            successBlock(task, responseDictionary);
+        } else {
+            failedBlock(task, error);
+        }
     };
     
     NSLog(LOG_API, URLString);
@@ -185,13 +194,28 @@ static CSRequestManager* _sharedManager = nil;
         progressBlock(progress);
     };
     
+    RequestFailedBlock requestFailedBlock = ^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"Error: %@", [error description]);
+        
+        NSString* errorResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+        NSData *errorData = [errorResponse dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:nil];
+        
+        if (responseDictionary) {
+            successBlock(task, responseDictionary);
+        } else {
+            failedBlock(task, error);
+        }
+    };
+    
     NSURLSessionUploadTask *uploadTask = [self.urlManager uploadTaskWithStreamedRequest:request
                                                                                progress:requestProgressBlock
                                                                       completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                                                           if (error) {
                                                                               NSLog(@"Error: %@", [error description]);
                                                                               
-                                                                              failedBlock(nil, error);
+                                                                              requestFailedBlock(nil, error);
                                                                           } else {
                                                                               NSLog(@"Response Object: %@", responseObject);
                                                                               
