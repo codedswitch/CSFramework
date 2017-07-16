@@ -52,7 +52,8 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
           files:(NSArray *)files
        progress:(RequestProgressBlock)progressBlock
         success:(RequestSuccessBlock)successBlock
-         failed:(RequestFailedBlock)failedBlock;
+         failed:(RequestFailedBlock)failedBlock
+  authenticated:(BOOL)authenticated;
 
 // Socket
 @property (nonatomic, retain) SocketIOClient* socket;

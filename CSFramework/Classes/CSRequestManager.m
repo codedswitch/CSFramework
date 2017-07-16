@@ -178,7 +178,8 @@ static CSRequestManager* _sharedManager = nil;
           files:(NSArray *)files
        progress:(RequestProgressBlock)progressBlock
         success:(RequestSuccessBlock)successBlock
-         failed:(RequestFailedBlock)failedBlock {
+         failed:(RequestFailedBlock)failedBlock
+  authenticated:(BOOL)authenticated {
 
     NSLog(LOG_API, URLString);
     NSLog(PARAM_API, parameters);
@@ -199,6 +200,12 @@ static CSRequestManager* _sharedManager = nil;
     
     [self initializeURLManager];
     
+    if (authenticated) {
+        NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:USERDEFAULT_TOKEN_STRING];
+        [request setValue:[NSString stringWithFormat:AF_HTTPHEADERFIELD_AUTHENTICATION_VALUE, token]
+       forHTTPHeaderField:AF_HTTPHEADERFIELD_AUTHENTICATION];
+    }
+    
     RequestProgressBlock requestProgressBlock = ^(NSProgress *progress) {
         progressBlock(progress);
     };
@@ -218,19 +225,20 @@ static CSRequestManager* _sharedManager = nil;
         }
     };
     
-    NSURLSessionUploadTask *uploadTask = [self.urlManager uploadTaskWithStreamedRequest:request
-                                                                               progress:requestProgressBlock
-                                                                      completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                                                          if (error) {
-                                                                              NSLog(@"Error: %@", [error description]);
-                                                                              
-                                                                              requestFailedBlock(nil, error);
-                                                                          } else {
-                                                                              NSLog(@"Response Object: %@", responseObject);
-                                                                              
-                                                                              successBlock(nil, responseObject);
-                                                                          }
-                                                                      }];
+    __block NSURLSessionUploadTask *uploadTask = nil;
+    uploadTask = [self.urlManager uploadTaskWithStreamedRequest:request
+                                                       progress:requestProgressBlock
+                                              completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                                  if (error) {
+                                                      NSLog(@"Error: %@", [error description]);
+                                                      
+                                                      requestFailedBlock(uploadTask, error);
+                                                  } else {
+                                                      NSLog(@"Response Object: %@", responseObject);
+                                                      
+                                                      successBlock(uploadTask, responseObject);
+                                                  }
+                                               }];
     [uploadTask resume];
 }
 
