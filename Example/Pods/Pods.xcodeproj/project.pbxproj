@@ -137,6 +137,10 @@
 		78623CAA1F1CB6350011B262 /* UIDevice+DeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 78623CA81F1CB6350011B262 /* UIDevice+DeviceType.m */; };
 		78966619B22098339A78DFAF433DF933 /* KWUserDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CF9C2599A99FBE2260921FCF4586F1B /* KWUserDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		789D749690B308852115FF20CD982A69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4004ECD1C3243F215464C34025E86AA1 /* CoreGraphics.framework */; };
+		78F45FA91F22551700A192B0 /* CSTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78623CA21F1CB44E0011B262 /* CSTabView.xib */; };
+		78F45FAA1F22551700A192B0 /* CSTabView~iphone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78623CAB1F1D11740011B262 /* CSTabView~iphone4.xib */; };
+		78F45FAB1F22551700A192B0 /* CSTabView~iphone47.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78623CAC1F1D11740011B262 /* CSTabView~iphone47.xib */; };
+		78F45FAC1F22551700A192B0 /* CSTabView~iphone55.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78623CAD1F1D11740011B262 /* CSTabView~iphone55.xib */; };
 		79F448AE353804CD1C66B9ADBB8688B3 /* KWPendingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC39647C73A290FAA4ADE241A7A194A /* KWPendingNode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		7A112C0F21A62CB6F1AA8D917A6EEA6C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B030738AAAFDE6BDC52C4D5FEB8F6FCA /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A3B05D2C3CD94AF966486267BA74C4F /* NSInvocation+KiwiAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3099D4B222BD7D6E82C11676A417044 /* NSInvocation+KiwiAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -1433,6 +1437,7 @@
 				3956BFA2D49ACA2C0E44B300F4BC5D93 /* Sources */,
 				184C2582A6B85D0398A54917622343D8 /* Frameworks */,
 				093E2F121C243E918837D28E8E287ABF /* Headers */,
+				78F45FA81F22550D00A192B0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1544,6 +1549,20 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78F45FA81F22550D00A192B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78F45FA91F22551700A192B0 /* CSTabView.xib in Resources */,
+				78F45FAA1F22551700A192B0 /* CSTabView~iphone4.xib in Resources */,
+				78F45FAB1F22551700A192B0 /* CSTabView~iphone47.xib in Resources */,
+				78F45FAC1F22551700A192B0 /* CSTabView~iphone55.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01BEBDDCACB60F624D4E34694F4CAAF3 /* Sources */ = {

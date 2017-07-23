@@ -87,10 +87,15 @@ static CSRequestManager* _sharedManager = nil;
        progress:(RequestProgressBlock)progressBlock
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
-  authenticated:(BOOL)authenticated {
-    
-    [self initializeHTTPManagerAuthenticated:authenticated];
+  authenticated:(BOOL)authenticated
+canCancelOperation:(BOOL)canCancelOperation {
 
+    [self initializeHTTPManagerAuthenticated:authenticated];
+    
+    if (canCancelOperation) {
+        [self.httpManager.operationQueue cancelAllOperations];
+    }
+    
     RequestProgressBlock requestProgressBlock = ^(NSProgress *progress) {
         
         progressBlock(progress);

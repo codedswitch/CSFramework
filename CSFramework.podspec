@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CSFramework'
-  s.version          = '0.1.7'
-  s.summary          = '0.1.7'
+  s.version          = '0.1.9'
+  s.summary          = '0.1.9'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'CSFramework/Classes/**/*'
   
   s.resource_bundles = {
-    'CSFramework' => ['CSFramework/Assets/*.png', 'CSFramework/Classes/*.xib']
+    'CSFramework' => ['CSFramework/Classes/*.xib']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
