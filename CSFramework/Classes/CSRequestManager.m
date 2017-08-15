@@ -88,12 +88,19 @@ static CSRequestManager* _sharedManager = nil;
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
+  isSynchronous:(BOOL)isSynchronous
 canCancelOperation:(BOOL)canCancelOperation {
 
     [self initializeHTTPManagerAuthenticated:authenticated];
     
     if (canCancelOperation) {
         [self.httpManager.operationQueue cancelAllOperations];
+    }
+    
+    __block BOOL synchronous = NO;
+    
+    if (isSynchronous) {
+        synchronous = YES;
     }
     
     RequestProgressBlock requestProgressBlock = ^(NSProgress *progress) {
@@ -105,6 +112,8 @@ canCancelOperation:(BOOL)canCancelOperation {
         NSLog(@"Response Object: %@", responseObject);
         
         successBlock(task, responseObject);
+        
+        synchronous = NO;
     };
     
     RequestFailedBlock requestFailedBlock = ^(NSURLSessionDataTask *task, NSError *error) {
@@ -120,6 +129,8 @@ canCancelOperation:(BOOL)canCancelOperation {
         } else {
             failedBlock(task, error);
         }
+        
+        synchronous = NO;
     };
     
     NSLog(LOG_API, URLString);
@@ -148,6 +159,10 @@ canCancelOperation:(BOOL)canCancelOperation {
         case CSHttpMethodDelete:
             [self.httpManager DELETE:URLString parameters:parameters success:requestSuccessBlock failure:requestFailedBlock];
             break;
+    }
+    
+    if (isSynchronous) {
+        while (synchronous) { }
     }
 }
 

@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
+  isSynchronous:(BOOL)isSynchronous
 canCancelOperation:(BOOL)canCancelOperation;
 
 // Upload Files (Array)
