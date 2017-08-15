@@ -97,11 +97,7 @@ canCancelOperation:(BOOL)canCancelOperation {
         [self.httpManager.operationQueue cancelAllOperations];
     }
     
-    __block BOOL synchronous = NO;
-    
-    if (isSynchronous) {
-        synchronous = YES;
-    }
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     RequestProgressBlock requestProgressBlock = ^(NSProgress *progress) {
         
@@ -111,9 +107,11 @@ canCancelOperation:(BOOL)canCancelOperation {
     RequestSuccessBlock requestSuccessBlock = ^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"Response Object: %@", responseObject);
         
-        successBlock(task, responseObject);
+        if (isSynchronous) {
+            dispatch_semaphore_signal(semaphore);
+        }
         
-        synchronous = NO;
+        successBlock(task, responseObject);
     };
     
     RequestFailedBlock requestFailedBlock = ^(NSURLSessionDataTask *task, NSError *error) {
@@ -124,13 +122,16 @@ canCancelOperation:(BOOL)canCancelOperation {
         
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:nil];
         
+        if (isSynchronous) {
+            dispatch_semaphore_signal(semaphore);
+        }
+        
         if (responseDictionary) {
             successBlock(task, responseDictionary);
         } else {
             failedBlock(task, error);
         }
         
-        synchronous = NO;
     };
     
     NSLog(LOG_API, URLString);
@@ -162,8 +163,8 @@ canCancelOperation:(BOOL)canCancelOperation {
     }
     
     if (isSynchronous) {
-        while (synchronous) { }
-    }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }    
 }
 
 - (void)initializeURLManager {
