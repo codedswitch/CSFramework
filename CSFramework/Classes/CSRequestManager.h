@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
 // HTTP(S)
 @property (nonatomic, retain) AFHTTPSessionManager *httpManager;
 @property (nonatomic, retain) AFURLSessionManager *urlManager;
+@property (nonatomic, retain) NSOperationQueue *queue;
 
 - (void)monitortAFNetworkingReachabilityStatus:(RequestReachabilityBlock)reachabilityBlock;
 
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
   isSynchronous:(BOOL)isSynchronous
+ dispatchGroupT:(dispatch_group_t)dispatchGroupT
 canCancelOperation:(BOOL)canCancelOperation;
 
 // Upload Files (Array)

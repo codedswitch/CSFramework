@@ -69,6 +69,8 @@ static CSRequestManager* _sharedManager = nil;
     [self checkAuthentication:authenticated];
     
     [self.httpManager.reachabilityManager startMonitoring];
+    
+    self.queue = [NSOperationQueue new];
 }
 
 - (void)checkAuthentication:(BOOL)authenticated {
@@ -88,7 +90,7 @@ static CSRequestManager* _sharedManager = nil;
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
-  isSynchronous:(BOOL)isSynchronous
+  isSynchronous:(BOOL)isSynchronous dispatchGroupT:(dispatch_group_t)dispatchGroupT
 canCancelOperation:(BOOL)canCancelOperation {
 
     [self initializeHTTPManagerAuthenticated:authenticated];
@@ -106,6 +108,10 @@ canCancelOperation:(BOOL)canCancelOperation {
         NSLog(@"Response Object: %@", responseObject);
         
         successBlock(task, responseObject);
+        
+        if (isSynchronous) {
+            dispatch_group_leave(dispatchGroupT);
+        }
     };
     
     RequestFailedBlock requestFailedBlock = ^(NSURLSessionDataTask *task, NSError *error) {
@@ -122,10 +128,17 @@ canCancelOperation:(BOOL)canCancelOperation {
             failedBlock(task, error);
         }
         
+        if (isSynchronous) {
+            dispatch_group_leave(dispatchGroupT);
+        }
     };
     
     NSLog(LOG_API, URLString);
     NSLog(PARAM_API, parameters);
+    
+    if (isSynchronous) {
+        dispatch_group_enter(dispatchGroupT);
+    }
     
     switch (method) {
         case CSHttpMethodGet:
