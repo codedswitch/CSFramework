@@ -45,6 +45,15 @@ typedef NS_ENUM(NSInteger, CSHttpMethod) {
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
+canCancelOperation:(BOOL)canCancelOperation;
+
+- (void)request:(NSString *)URLString
+         method:(CSHttpMethod)method
+     parameters:(id)parameters
+       progress:(RequestProgressBlock)progressBlock
+        success:(RequestSuccessBlock)successBlock
+         failed:(RequestFailedBlock)failedBlock
+  authenticated:(BOOL)authenticated
   isSynchronous:(BOOL)isSynchronous
  dispatchGroupT:(dispatch_group_t)dispatchGroupT
 canCancelOperation:(BOOL)canCancelOperation;

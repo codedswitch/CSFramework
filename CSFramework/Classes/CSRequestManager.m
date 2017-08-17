@@ -90,6 +90,26 @@ static CSRequestManager* _sharedManager = nil;
         success:(RequestSuccessBlock)successBlock
          failed:(RequestFailedBlock)failedBlock
   authenticated:(BOOL)authenticated
+canCancelOperation:(BOOL)canCancelOperation {
+    [self request:URLString
+           method:method
+       parameters:parameters
+         progress:progressBlock
+          success:successBlock
+           failed:failedBlock
+    authenticated:authenticated
+    isSynchronous:NO
+   dispatchGroupT:nil
+canCancelOperation:canCancelOperation];
+}
+
+- (void)request:(NSString *)URLString
+         method:(CSHttpMethod)method
+     parameters:(id)parameters
+       progress:(RequestProgressBlock)progressBlock
+        success:(RequestSuccessBlock)successBlock
+         failed:(RequestFailedBlock)failedBlock
+  authenticated:(BOOL)authenticated
   isSynchronous:(BOOL)isSynchronous dispatchGroupT:(dispatch_group_t)dispatchGroupT
 canCancelOperation:(BOOL)canCancelOperation {
 
