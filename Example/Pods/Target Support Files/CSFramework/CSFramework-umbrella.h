@@ -12,6 +12,12 @@
 
 #import "CSRequestFileData.h"
 #import "CSRequestManager.h"
+#import "CSTabView.h"
+#import "CSTabViewController.h"
+#import "CSTabViewDelegate.h"
+#import "CSTabViewInternalDelegate.h"
+#import "NSString+DeviceType.h"
+#import "UIDevice+DeviceType.h"
 
 FOUNDATION_EXPORT double CSFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char CSFrameworkVersionString[];
