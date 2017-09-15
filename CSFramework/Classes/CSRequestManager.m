@@ -62,7 +62,7 @@ static CSRequestManager* _sharedManager = nil;
     }
     
     self.httpManager = [AFHTTPSessionManager manager];
-    self.httpManager.securityPolicy.allowInvalidCertificates = NO;
+    self.httpManager.securityPolicy.allowInvalidCertificates = YES;
     
     self.httpManager.requestSerializer = [AFHTTPRequestSerializer serializer];      // HTTP Request
     self.httpManager.responseSerializer = [AFJSONResponseSerializer serializer];    // JSON Response
