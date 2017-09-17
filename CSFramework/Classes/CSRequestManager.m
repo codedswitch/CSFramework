@@ -198,6 +198,11 @@ canCancelOperation:(BOOL)canCancelOperation {
     }
     
     self.urlManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    [policy setAllowInvalidCertificates:YES];
+    [policy setValidatesDomainName:NO];
+    self.urlManager.securityPolicy = policy;
 }
 
 - (NSString *)getHTTPMethodString:(CSHttpMethod)method {
