@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'CSFramework/Classes/**/*'
   
-  s.resource_bundles = {
-    'CSFramework' => ['CSFramework/Classes/*.xib']
-  }
+  #s.resource_bundles = {
+  #   'CSFramework' => ['CSFramework/Classes/*.xib']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
