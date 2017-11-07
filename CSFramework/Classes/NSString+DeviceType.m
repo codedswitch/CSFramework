@@ -22,6 +22,8 @@
             return [NSString stringWithFormat:@"%@~iphone47", self];
         case UIDeviceTypeScreenXIB55:
             return [NSString stringWithFormat:@"%@~iphone55", self];
+        case UIDeviceTypeScreenXIB58:
+            return [NSString stringWithFormat:@"%@~iphone58", self];
         case UIDeviceTypeScreenXIB97:
             return [NSString stringWithFormat:@"%@~ipad97", self];
         case UIDeviceTypeScreenXIB129:

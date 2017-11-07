@@ -28,16 +28,19 @@ typedef NS_ENUM(NSInteger, UIDeviceTypeScreenXIB) {
     // index 3 in .xib
     UIDeviceTypeScreenXIB55    = 3,      // in points; width = 414, height = 736
     
+    // iPhone X
+    UIDeviceTypeScreenXIB58    = 4,      // in points: width = 375, height = 812
+    
     // iPad 2
     // iPad Air
     // iPad Air 2
     // iPad Retina
     // index 0 in ~ipad.xib
-    UIDeviceTypeScreenXIB97    = 4,     // in points; width = 768, height = 1024
+    UIDeviceTypeScreenXIB97    = 5,     // in points; width = 768, height = 1024
     
     // iPad Pro
     // index 1 in ~ipad.xib
-    UIDeviceTypeScreenXIB129   = 5,     // in points; width = 1024, height = 1366
+    UIDeviceTypeScreenXIB129   = 6,     // in points; width = 1024, height = 1366
 };
 
 @interface UIDevice (DeviceType)

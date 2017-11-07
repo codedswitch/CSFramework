@@ -29,6 +29,9 @@
         case 736:
             deviceScreen = UIDeviceTypeScreenXIB55;
             break;
+        case 812:
+            deviceScreen = UIDeviceTypeScreenXIB58;
+            break;
         case 1024:
             deviceScreen = UIDeviceTypeScreenXIB97;
             break;
