@@ -1,7 +1,7 @@
 {
   "name": "CSFramework",
-  "version": "0.2.5",
-  "summary": "0.2.5",
+  "version": "0.3.2",
+  "summary": "0.3.2",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/codedswitch/CSFramework",
   "license": {
@@ -13,17 +13,12 @@
   },
   "source": {
     "git": "https://github.com/codedswitch/CSFramework.git",
-    "tag": "0.2.5"
+    "tag": "0.3.2"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "CSFramework/Classes/**/*",
-  "resource_bundles": {
-    "CSFramework": [
-      "CSFramework/Classes/*.xib"
-    ]
-  },
   "dependencies": {
     "AFNetworking": [
 

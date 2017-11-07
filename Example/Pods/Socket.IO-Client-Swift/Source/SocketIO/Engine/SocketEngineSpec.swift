@@ -24,12 +24,12 @@
 //
 
 import Foundation
-import StarscreamSocketIO
+import Starscream
 
 /// Specifies a SocketEngine.
 @objc public protocol SocketEngineSpec {
     /// The client for this engine.
-    weak var client: SocketEngineClient? { get set }
+    var client: SocketEngineClient? { get set }
 
     /// `true` if this engine is closed.
     var closed: Bool { get }
@@ -147,14 +147,21 @@ extension SocketEngineSpec {
         return com.url!
     }
 
+    func addHeaders(to req: inout URLRequest) {
+        if let cookies = cookies {
+            req.allHTTPHeaderFields = HTTPCookie.requestHeaderFields(with: cookies)
+        }
+
+        if let extraHeaders = extraHeaders {
+            for (headerName, value) in extraHeaders {
+                req.setValue(value, forHTTPHeaderField: headerName)
+            }
+        }
+    }
+
     func createBinaryDataForSend(using data: Data) -> Either<Data, String> {
         if websocket {
-            var byteArray = [UInt8](repeating: 0x4, count: 1)
-            let mutData = NSMutableData(bytes: &byteArray, length: 1)
-
-            mutData.append(data)
-
-            return .left(mutData as Data)
+            return .left(Data(bytes: [0x4]) + data)
         } else {
             return .right("b4" + data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)))
         }

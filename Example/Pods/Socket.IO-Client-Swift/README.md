@@ -61,27 +61,29 @@ SocketIOClient* socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{
 Checkout the [FAQs](https://nuclearace.github.io/Socket.IO-Client-Swift/faq.html) for commonly asked questions.
 
 ## Installation
-Requires Swift 3/Xcode 8.x
+Requires Swift 4/Xcode 9.x
 
-If you need swift 2.3 use the swift2.3 tag (Pre-Swift 3 support is no longer maintained)
+If you need Swift 2.3 use the [swift2.3 tag](https://github.com/socketio/socket.io-client-swift/releases/tag/swift2.3) (Pre-Swift 4 support is no longer maintained)
 
-If you need swift 2.2 use 7.x.
-
-If you need Swift 2.1 use v5.5.0.
-
-If you need Swift 1.2 use v2.4.5.
-
-If you need Swift 1.1 use v1.5.2.
+If you need Swift 3.x use v11.1.3.
 
 ### Swift Package Manager
 Add the project as a dependency to your Package.swift:
 ```swift
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
-    name: "YourSocketIOProject",
+    name: "socket.io-test",
+    products: [
+        .executable(name: "socket.io-test", targets: ["YourTargetName"])
+    ],
     dependencies: [
-        .Package(url: "https://github.com/socketio/socket.io-client-swift", majorVersion: 11)
+        .package(url: "https://github.com/socketio/socket.io-client-swift", .upToNextMajor(from: "12.1.0"))
+    ],
+    targets: [
+        .target(name: "YourTargetName", dependencies: ["SocketIO"], path: "./Path/To/Your/Sources")
     ]
 )
 ```
@@ -89,13 +91,14 @@ let package = Package(
 Then import `import SocketIO`.
 
 ### Carthage
-Add these line to your `Cartfile`:
+Add this line to your `Cartfile`:
 ```
-github "nuclearace/Starscream" ~> 8.0.5
-github "socketio/socket.io-client-swift" ~> 11.1.2 # Or latest version
+github "socketio/socket.io-client-swift" ~> 12.1.2 # Or latest version
 ```
 
 Run `carthage update --platform ios,macosx`.
+
+Add the `Starscream` and `SocketIO` frameworks to your projects and follow the usual Carthage process.
 
 ### CocoaPods 1.0.0 or later
 Create `Podfile` and add `pod 'Socket.IO-Client-Swift'`:
@@ -104,7 +107,7 @@ Create `Podfile` and add `pod 'Socket.IO-Client-Swift'`:
 use_frameworks!
 
 target 'YourApp' do
-    pod 'Socket.IO-Client-Swift', '~> 11.1.2' # Or latest version
+    pod 'Socket.IO-Client-Swift', '~> 12.1.2' # Or latest version
 end
 ```
 

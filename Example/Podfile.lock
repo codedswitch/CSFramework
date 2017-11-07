@@ -14,13 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CSFramework (0.2.5):
+  - CSFramework (0.3.2):
     - AFNetworking
     - Socket.IO-Client-Swift
   - Kiwi (2.4.0)
-  - Socket.IO-Client-Swift (11.1.2):
-    - StarscreamSocketIO (~> 8.0.5)
-  - StarscreamSocketIO (8.0.5)
+  - Socket.IO-Client-Swift (12.1.2):
+    - Starscream (~> 2.1.1)
+  - Starscream (2.1.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -34,10 +34,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CSFramework: b58bdcd84098c994dbbe743c1c2a0abbcae8b39a
+  CSFramework: d71e4ebb581758e4162b96cdd10dd9c70fda4f7e
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
-  Socket.IO-Client-Swift: 2283d3d333cc6b24c4e7ba191a8a7907d35ac42b
-  StarscreamSocketIO: b56993332d3cd74885a7486e183ff0cd9541b3f3
+  Socket.IO-Client-Swift: ba3cb1c4bf0a6ca90080406a2c22685c25ad1f60
+  Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
 
 PODFILE CHECKSUM: cadd32128817923e8d08a4a6cd068759ead766e4
 
