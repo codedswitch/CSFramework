@@ -296,7 +296,8 @@ canCancelOperation:(BOOL)canCancelOperation {
     
     NSURL* url = [[NSURL alloc] initWithString:urlString];
     
-    self.socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES, @"reconnects": @YES, @"forceNew": @YES}];
+    SocketManager *manager = [[SocketManager alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES, @"reconnects": @YES, @"forceNew": @YES}];
+    self.socket = manager.defaultSocket;
     
     [self.socket onAny:^(SocketAnyEvent * _Nonnull handler) {
         NSLog(@"ON ANY: %@", handler);
