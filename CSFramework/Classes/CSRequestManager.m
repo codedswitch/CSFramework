@@ -82,6 +82,7 @@ static CSRequestManager* _sharedManager = nil;
     
     if (authenticated) {
         NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:USERDEFAULT_TOKEN_STRING];
+        NSLog(@"TOKEN: %@", token);
         [self.httpManager.requestSerializer setValue:[NSString stringWithFormat:AF_HTTPHEADERFIELD_AUTHENTICATION_VALUE, token]
                                   forHTTPHeaderField:AF_HTTPHEADERFIELD_AUTHENTICATION];
     }
