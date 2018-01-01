@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'CSFramework_Example' do
   pod 'CSFramework', :path => '../'
-  pod 'AFNetworking'
+  pod 'AFNetworking', :git => 'https://github.com/AFNetworking/AFNetworking.git', :tag => '3.2.0'  
   pod 'Socket.IO-Client-Swift'
 
   target 'CSFramework_Tests' do

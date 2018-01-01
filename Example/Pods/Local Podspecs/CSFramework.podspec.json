@@ -1,7 +1,7 @@
 {
   "name": "CSFramework",
-  "version": "0.3.3",
-  "summary": "0.3.3",
+  "version": "0.3.6",
+  "summary": "0.3.6",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/codedswitch/CSFramework",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/codedswitch/CSFramework.git",
-    "tag": "0.3.3"
+    "tag": "0.3.6"
   },
   "platforms": {
     "ios": "9.0"
