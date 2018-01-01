@@ -15,6 +15,7 @@ before_install:
 - gem install xcpretty-travis-formatter
 - xcrun simctl list
 # - pod install --project-directory=Example
+- pod install --repo-update
 script:
 # - set -o pipefail && xcodebuild test -workspace Example/CSFramework.xcworkspace -scheme CSFramework-Example -sdk iphonesimulator10.2 GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.2, id=E40727B3-41FB-4D6E-B4CB-BFA87109EB12' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
