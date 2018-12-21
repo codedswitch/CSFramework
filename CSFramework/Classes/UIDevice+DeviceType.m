@@ -13,6 +13,7 @@
 - (UIDeviceTypeScreenXIB)getDeviceTypeScreenXIB {
     
     NSInteger deviceScreenHeight = [UIScreen mainScreen].bounds.size.height;
+    NSInteger deviceScreenHeightPixel = [UIScreen mainScreen].nativeBounds.size.height;
     
     UIDeviceTypeScreenXIB deviceScreen;
     
@@ -31,6 +32,19 @@
             break;
         case 812:
             deviceScreen = UIDeviceTypeScreenXIB58;
+            break;
+        case 896:
+            switch (deviceScreenHeightPixel) {
+                case 1792:
+                    deviceScreen = UIDeviceTypeScreenXIB61;
+                    break;
+                case 2688:
+                    deviceScreen = UIDeviceTypeScreenXIB65;
+                    break;
+                default:
+                    deviceScreen = UIDeviceTypeScreenXIB61;
+                    break;
+            }
             break;
         case 1024:
             deviceScreen = UIDeviceTypeScreenXIB97;
